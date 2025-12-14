@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools-scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datarasta"
+description = "A Python library for data quality testing with comprehensive metrics"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+    {name = "DataRasta Contributors"},
+]
+keywords = ["data quality", "data validation", "data testing", "data profiling", "metrics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "pandas>=1.3.0",
+    "numpy>=1.20.0",
+    "scipy>=1.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.910",
+]
+
+[project.urls]
+Homepage = "https://github.com/syedhaseebahmad/datarasta"
+Documentation = "https://github.com/syedhaseebahmad/datarasta#readme"
+Repository = "https://github.com/syedhaseebahmad/datarasta"
+Issues = "https://github.com/syedhaseebahmad/datarasta/issues"
+
+[tool.setuptools]
+packages = ["datarasta", "datarasta.metrics"]
+
+[tool.black]
+line-length = 100
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
